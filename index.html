@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Faixa Etária</title>
+</head>
+<body>
+    <main>
+        <h1>Faixa Etária</h1>
+        <p>Vamos descobrir qual a sua faixa etária?!</p>
+        <section>
+            <p>Digite sua idade</p>
+            <input type="number" name="idade" id="idade" placeholder="...">
+            <button type="button" onclick="validarIdade()">Válidar</button>
+        </section>
+        <h2 id="faixaEtaria"></h2>
+    </main>
+</body>
+<script>
+    
+    
+    function validarIdade() {
+        var idade = parseInt(document.getElementById("idade").value);
+
+        if (isNaN(idade) || idade < 0) {
+              document.getElementById("faixaEtaria").innerHTML = "Por favor, insira uma idade válida.";
+        }
+ 
+        if (idade >= 0 && idade < 15) {
+            document.getElementById("faixaEtaria").innerHTML = "Você é uma Criança!";
+            console.log("a")
+        } else if(idade >= 15 && idade < 30){
+            document.getElementById("faixaEtaria").innerHTML = "Você é Jovem!";
+
+        } else if(idade >= 30 && idade < 60){
+            document.getElementById("faixaEtaria").innerHTML = "Você é Adulto!";
+
+        } else if(idade >= 60){
+            document.getElementById("faixaEtaria").innerHTML = "Você é Idoso!";
+        }
+    }
+</script>
+</html>
